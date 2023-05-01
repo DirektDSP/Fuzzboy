@@ -1,0 +1,5 @@
+﻿  include_juce_audio_plugin_client_VST3.cpp
+     Creating library C:\Users\seamu\OneDrive\Direkt Software\Fuzzboy\Builds\VisualStudio2022\x64\Release\VST3\Fuzzboy.lib and object C:\Users\seamu\OneDrive\Direkt Software\Fuzzboy\Builds\VisualStudio2022\x64\Release\VST3\Fuzzboy.exp
+  Generating code
+  Finished generating code
+  Fuzzboy_VST3.vcxproj -> C:\Users\seamu\OneDrive\Direkt Software\Fuzzboy\Builds\VisualStudio2022\x64\Release\VST3\Fuzzboy.vst3

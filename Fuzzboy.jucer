@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="bc1p6K" name="Fuzzboy" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="1" displaySplashScreen="1" jucerFormatVersion="1"
-              version="1.0" companyName="DirektDSP" companyWebsite="www.direktdsp.com"
+              version="1.1" companyName="DirektDSP" companyWebsite="www.direktdsp.com"
               companyCopyright="All Rights Reserved" companyEmail="direktdsp@gmail.com"
               pluginManufacturer="DirektDSP" pluginName="Fuzzboy" pluginCode="Fb0a"
               pluginFormats="buildAU,buildStandalone,buildVST3">
