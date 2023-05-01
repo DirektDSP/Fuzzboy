@@ -68,14 +68,14 @@ public:
 	{
 		std::vector<std::unique_ptr<juce::RangedAudioParameter>> params;
         
-		params.push_back(std::make_unique<juce::AudioParameterFloat>("TONE", "Tone", 1.0f, 2.0f, 0.0f));
-		params.push_back(std::make_unique<juce::AudioParameterFloat>("POWER", "Power", 1.0f, 2.0f, 0.0f));
-		params.push_back(std::make_unique<juce::AudioParameterFloat>("IN", "In Gain", 0.0f, 5.0f, 1.0f));
-		params.push_back(std::make_unique<juce::AudioParameterFloat>("OUT", "Out Gain", 0.0f, 5.0f, 1.0f));
+        params.push_back(std::make_unique<juce::AudioParameterFloat>(ParameterID{"TONE", 1}, "Tone", 1.0f, 2.0f, 0.0f));
+        params.push_back(std::make_unique<juce::AudioParameterFloat>(ParameterID{"POWER", 1}, "Power", 1.0f, 2.0f, 0.0f));
+        params.push_back(std::make_unique<juce::AudioParameterFloat>(ParameterID{"IN", 1}, "In Gain", 0.0f, 5.0f, 1.0f));
+        params.push_back(std::make_unique<juce::AudioParameterFloat>(ParameterID{"OUT", 1}, "Out Gain", 0.0f, 5.0f, 1.0f));
         
-		params.push_back(std::make_unique<juce::AudioParameterBool>("BYPASS", "Bypass", false));
+        params.push_back(std::make_unique<juce::AudioParameterBool>(ParameterID{"BYPASS", 1}, "Bypass", false));
 
-		params.push_back(std::make_unique<juce::AudioParameterChoice>("MODE", "Mode", juce::StringArray{"Crunch", "Potato", "Hiss"}, 0));
+        params.push_back(std::make_unique<juce::AudioParameterChoice>(ParameterID{"MODE", 1}, "Mode", juce::StringArray{"Crunch", "Potato", "Hiss"}, 0));
         
 		return { params.begin(), params.end() };
 	}

@@ -217,14 +217,6 @@ void FuzzboyAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce:
 	float in = apvts.getRawParameterValue("IN")->load();
 	float out = apvts.getRawParameterValue("OUT")->load();
 
-
-    float phasor = 0.0f;
-    float last = 0.0f;
-
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer(channel);
-    }
     
     for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
     {

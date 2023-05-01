@@ -371,7 +371,7 @@ private:
 			int buttonX, int buttonY, int buttonW, int buttonH, ComboBox& box) override
 		{
 			// Define corner radius
-			float cornerRadius = 5.0f;
+        
 
 			// draw rounded background colour
 			g.setColour(bgColour);
