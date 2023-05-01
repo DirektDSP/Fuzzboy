@@ -1174,6 +1174,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
@@ -1273,6 +1274,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
 				LIBRARY_STYLE = Bundle;
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.1;
 				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client/AU";
 				OTHER_LDFLAGS = (
 					"-bundle",
@@ -1593,6 +1595,7 @@
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
@@ -1693,6 +1696,7 @@
 				LIBRARY_STYLE = Bundle;
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.1;
 				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client/AU";
 				OTHER_LDFLAGS = (
 					"-bundle",
@@ -1889,7 +1893,7 @@
 				3C6C3E2AF63FA9C48BD1A3F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		5DEF9D28C119AD7751855B5C /* Build configuration list for PBXNativeTarget "Fuzzboy - Shared Code" */ = {
 			isa = XCConfigurationList;
@@ -1898,7 +1902,7 @@
 				52193AE09E5A770C22B1F26D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		6F3BF922DEC38A9D4322DA03 /* Build configuration list for PBXNativeTarget "Fuzzboy - Standalone Plugin" */ = {
 			isa = XCConfigurationList;
@@ -1907,7 +1911,7 @@
 				8EAD196E52779C83B148EB2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		72ECFF9CF3CA3B0B56E523B1 /* Build configuration list for PBXAggregateTarget "Fuzzboy - All" */ = {
 			isa = XCConfigurationList;
@@ -1916,7 +1920,7 @@
 				5E56F63E12FE5F504A08FF45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		B0687D7C063F5698992B266D /* Build configuration list for PBXNativeTarget "Fuzzboy - AU" */ = {
 			isa = XCConfigurationList;
@@ -1925,7 +1929,7 @@
 				B1824F463E1035F43C6B42EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		FE066B41911E233C5B38437F /* Build configuration list for PBXProject "Fuzzboy" */ = {
 			isa = XCConfigurationList;
@@ -1934,7 +1938,7 @@
 				DE1F0C8CDA22C0B04AEE14F5 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
