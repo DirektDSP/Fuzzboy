@@ -34,9 +34,11 @@ FuzzboyAudioProcessorEditor::FuzzboyAudioProcessorEditor (FuzzboyAudioProcessor&
 	bypassAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(audioProcessor.apvts, "BYPASS", bypassButton);
 	inGainAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.apvts, "IN", inGain);
 	outGainAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.apvts, "OUT", outGain);
-	modeBox.addItemList(juce::StringArray{ "Crunch", "Potato", "Hiss" }, 1);
+	
+    modeBox.addItemList(juce::StringArray{ "Crunch", "Potato", "Hiss", "Sour" }, 1);
 	modeBox.setSelectedItemIndex(0);
-	modeAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audioProcessor.apvts, "MODE", modeBox);
+	
+    modeAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audioProcessor.apvts, "MODE", modeBox);
 	
 }
 

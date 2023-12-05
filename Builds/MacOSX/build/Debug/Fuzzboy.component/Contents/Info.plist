@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AudioComponents</key>
+	<array>
+		<dict>
+			<key>description</key>
+			<string>Fuzzboy</string>
+			<key>factoryFunction</key>
+			<string>FuzzboyAUFactory</string>
+			<key>manufacturer</key>
+			<string>Manu</string>
+			<key>name</key>
+			<string>DirektDSP: Fuzzboy</string>
+			<key>resourceUsage</key>
+			<dict>
+				<key>network.client</key>
+				<true/>
+				<key>temporary-exception.files.all.read-write</key>
+				<true/>
+			</dict>
+			<key>subtype</key>
+			<string>Fb0a</string>
+			<key>type</key>
+			<string>aufx</string>
+			<key>version</key>
+			<integer>66048</integer>
+		</dict>
+	</array>
+	<key>BuildMachineOSBuild</key>
+	<string>23B92</string>
+	<key>CFBundleDisplayName</key>
+	<string>Fuzzboy</string>
+	<key>CFBundleExecutable</key>
+	<string>Fuzzboy</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.DirektDSP.Fuzzboy</string>
+	<key>CFBundleName</key>
+	<string>Fuzzboy</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.2</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.2</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string></string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
+	<key>DTPlatformVersion</key>
+	<string>14.0</string>
+	<key>DTSDKBuild</key>
+	<string>23A334</string>
+	<key>DTSDKName</key>
+	<string>macosx14.0</string>
+	<key>DTXcode</key>
+	<string>1501</string>
+	<key>DTXcodeBuild</key>
+	<string>15A507</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.13</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>All Rights Reserved</string>
+</dict>
+</plist>

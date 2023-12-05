@@ -25,14 +25,14 @@ FuzzboyAudioProcessor::FuzzboyAudioProcessor()
                     ),
 #endif
             apvts(*this, nullptr, "Parameters", createParameterLayout()),
-	visualiser(1)
+    visualiser(1)
 {
     apvts.state.setProperty(Service::PresetManager::presetNameProperty, "", nullptr);
     apvts.state.setProperty("version", ProjectInfo::versionString, nullptr);
 
     presetManager = std::make_unique<Service::PresetManager>(apvts);
     
-	visualiser.setRepaintRate(45);
+    visualiser.setRepaintRate(45);
     visualiser.setBufferSize(512);
     
 };
@@ -148,7 +148,7 @@ bool FuzzboyAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) 
 /*
 float distort(float input, float gain, float freq, float clipAmt, float power) {
     float output = tanh(gain * input);
-	float pi = 3.14159265358979323846;
+    float pi = 3.14159265358979323846;
     output = (sin(pi * output * freq) + sinh(pi * input )) / 2;
     output = tanh(output * power);
     output = output * 0.6f;
@@ -180,6 +180,16 @@ float HPdist(float x, float g, float f, float p)
     return output * 0.8f;
 }
 
+double euler = 2.71828182845904523536;
+
+float sour(float t, float p, float x) {
+    double tx2 = t * x * x; // calculate t * x^2
+    double sign_x = (x < 0) ? -1 : 1; // calculate sign of -x
+    double exp_part = (1 - exp(abs(x))) / (euler - 1); // calculate the exponential part
+    return tx2 * sign_x * exp_part; // combine the parts
+}
+
+
 void FuzzboyAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     juce::ScopedNoDenormals noDenormals;
@@ -197,7 +207,7 @@ void FuzzboyAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce:
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear(i, 0, buffer.getNumSamples());
 
-	
+    
 
     // This is the place where you'd normally do the guts of your plugin's
     // audio processing...
@@ -208,65 +218,75 @@ void FuzzboyAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce:
 
 
     // get parameter values
-    auto q = apvts.getRawParameterValue("TONE")->load();
-	auto g = apvts.getRawParameterValue("POWER")->load();
-	bool bp = apvts.getRawParameterValue("BYPASS")->load();
+    auto t = apvts.getRawParameterValue("TONE")->load();
+    auto p = apvts.getRawParameterValue("POWER")->load();
+    bool bp = apvts.getRawParameterValue("BYPASS")->load();
     
-	int mode = apvts.getRawParameterValue("MODE")->load();
+    int mode = apvts.getRawParameterValue("MODE")->load();
 
-	float in = apvts.getRawParameterValue("IN")->load();
-	float out = apvts.getRawParameterValue("OUT")->load();
+    float in = apvts.getRawParameterValue("IN")->load();
+    float out = apvts.getRawParameterValue("OUT")->load();
 
     
     for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
     {
             // clip the signal to the amp value
-		    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-		    {
+            for (int channel = 0; channel < totalNumInputChannels; ++channel)
+            {
                 auto* channelData = buffer.getWritePointer(channel);
                 float x = channelData[sample];
-				
+                
                 
                 
                 if (bp == false)
                 {
                     x *= in;
-                    
-                    if (mode == 0) {
-                        // crunch
-                        x = 2 * x / (1 + sin(2 * x));
-                        x *= q * g * g;
-                        x = softClip(x);
-                        x *= out;
-
-                        channelData[sample] = x;
-                    }
-
-                    if (mode == 1) {
-
-                        // smooth
-						x = HPdist(x, q, g, 10);
-                        x *= q;
-						x = softClip(x);
-                        x *= out;
-
-                        channelData[sample] = x;
-                    }
-
-                    if (mode == 2) {
-                        float r3 = -1.0f + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (1.0f + 1.0f)));
-                        r3 *= x;
-                        r3 *= 0.001 * (g-1);
-                        x += r3;
-                        
-                        x = g * tan(sin(x));
-                        x = ((sinh(g * x)) * (2 * g)) / (2);
-
-                        x = softClip(3 * q * x);
-
-                        x *= out;
-
-                        channelData[sample] = x;
+                    switch(mode){
+                        case 0:{
+                            // crunch
+                            x = 2 * x / (1 + sin(2 * x));
+                            x *= t * p * p;
+                            x = softClip(x);
+                            x *= out;
+                            
+                            channelData[sample] = x;
+                            break;
+                        }
+                        case 1:{
+                            // smooth
+                            x = HPdist(x, t, p, 10);
+                            x *= t;
+                            x = softClip(x);
+                            x *= out;
+                            
+                            channelData[sample] = x;
+                            break;
+                        }
+                        case 2:{
+                            // hiss
+                            float r3 = -1.0f + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (1.0f + 1.0f)));
+                            r3 *= x;
+                            r3 *= 0.001 * (p-1);
+                            x += r3;
+                            
+                            x = p * tan(sin(x));
+                            x = ((sinh(p * x)) * (2 * p)) / (2);
+                            
+                            x = softClip(3 * t * x);
+                            channelData[sample] = x;
+                            break;
+                        }
+                        case 3:{
+                            x = sour(t, p, x);
+                            x *= out; // Apply output gain
+                            channelData[sample] = x;
+                            break;
+                        }
+                        default:{
+                            x *= out;
+                            break;
+                        }
+//                        channelData[sample] = x;
                     }
                     
                 }

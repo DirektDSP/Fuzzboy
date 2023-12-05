@@ -77,13 +77,13 @@
  #define JucePlugin_EditorRequiresKeyboardFocus  0
 #endif
 #ifndef  JucePlugin_Version
- #define JucePlugin_Version                1.1
+ #define JucePlugin_Version                1.2
 #endif
 #ifndef  JucePlugin_VersionCode
- #define JucePlugin_VersionCode            0x10100
+ #define JucePlugin_VersionCode            0x10200
 #endif
 #ifndef  JucePlugin_VersionString
- #define JucePlugin_VersionString          "1.1"
+ #define JucePlugin_VersionString          "1.2"
 #endif
 #ifndef  JucePlugin_VSTUniqueID
  #define JucePlugin_VSTUniqueID            JucePlugin_PluginCode
@@ -155,7 +155,7 @@
  #define JucePlugin_ARAFactoryID           "com.DirektDSP.Fuzzboy.factory"
 #endif
 #ifndef  JucePlugin_ARADocumentArchiveID
- #define JucePlugin_ARADocumentArchiveID   "com.DirektDSP.Fuzzboy.aradocumentarchive.1.0"
+ #define JucePlugin_ARADocumentArchiveID   "com.DirektDSP.Fuzzboy.aradocumentarchive.1.1"
 #endif
 #ifndef  JucePlugin_ARACompatibleArchiveIDs
  #define JucePlugin_ARACompatibleArchiveIDs  ""

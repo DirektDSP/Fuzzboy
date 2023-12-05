@@ -10,9 +10,12 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fuzzboy - VST3", "Fuzzboy_VST3.vcxproj", "{5096E346-5154-AAEF-7CDC-6C9D5BDA2E3F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{855AEC34-F5F3-5958-2AB5-0DB7D8CC273E} = {855AEC34-F5F3-5958-2AB5-0DB7D8CC273E}
+		{0A1B06BD-29BF-E2E9-F22A-45B91F891C51} = {0A1B06BD-29BF-E2E9-F22A-45B91F891C51}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fuzzboy - Shared Code", "Fuzzboy_SharedCode.vcxproj", "{855AEC34-F5F3-5958-2AB5-0DB7D8CC273E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fuzzboy - VST3 Manifest Helper", "Fuzzboy_VST3ManifestHelper.vcxproj", "{0A1B06BD-29BF-E2E9-F22A-45B91F891C51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +35,10 @@ Global
 		{855AEC34-F5F3-5958-2AB5-0DB7D8CC273E}.Release|x64.Build.0 = Release|x64
 		{855AEC34-F5F3-5958-2AB5-0DB7D8CC273E}.Debug|x64.ActiveCfg = Debug|x64
 		{855AEC34-F5F3-5958-2AB5-0DB7D8CC273E}.Debug|x64.Build.0 = Debug|x64
+		{0A1B06BD-29BF-E2E9-F22A-45B91F891C51}.Release|x64.ActiveCfg = Release|x64
+		{0A1B06BD-29BF-E2E9-F22A-45B91F891C51}.Release|x64.Build.0 = Release|x64
+		{0A1B06BD-29BF-E2E9-F22A-45B91F891C51}.Debug|x64.ActiveCfg = Debug|x64
+		{0A1B06BD-29BF-E2E9-F22A-45B91F891C51}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

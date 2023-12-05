@@ -75,7 +75,7 @@ public:
         
         params.push_back(std::make_unique<juce::AudioParameterBool>(ParameterID{"BYPASS", 1}, "Bypass", false));
 
-        params.push_back(std::make_unique<juce::AudioParameterChoice>(ParameterID{"MODE", 1}, "Mode", juce::StringArray{"Crunch", "Potato", "Hiss"}, 0));
+        params.push_back(std::make_unique<juce::AudioParameterChoice>(ParameterID{"MODE", 1}, "Mode", juce::StringArray{"Crunch", "Potato", "Hiss", "Sour"}, 0));
         
 		return { params.begin(), params.end() };
 	}
