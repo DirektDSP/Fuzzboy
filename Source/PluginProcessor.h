@@ -33,8 +33,6 @@ public:
     bool isBusesLayoutSupported (const BusesLayout& layouts) const override;
    #endif
 
-    float estimateFundamentalFrequency(const AudioBuffer<float>& buffer);
-
     void processBlock (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
 
     //==============================================================================
@@ -68,8 +66,11 @@ public:
 	{
 		std::vector<std::unique_ptr<juce::RangedAudioParameter>> params;
         
-        params.push_back(std::make_unique<juce::AudioParameterFloat>(ParameterID{"TONE", 1}, "Tone", 1.0f, 2.0f, 0.0f));
-        params.push_back(std::make_unique<juce::AudioParameterFloat>(ParameterID{"POWER", 1}, "Power", 1.0f, 2.0f, 0.0f));
+        // Defaults were 0.0f — below the 1.0f minimum, so JUCE silently clamped
+        // them to 1.0 at runtime. Set the default to 1.0f explicitly: fixes the
+        // out-of-range value WITHOUT changing the shipped default sound.
+        params.push_back(std::make_unique<juce::AudioParameterFloat>(ParameterID{"TONE", 1}, "Tone", 1.0f, 2.0f, 1.0f));
+        params.push_back(std::make_unique<juce::AudioParameterFloat>(ParameterID{"POWER", 1}, "Power", 1.0f, 2.0f, 1.0f));
         params.push_back(std::make_unique<juce::AudioParameterFloat>(ParameterID{"IN", 1}, "In Gain", 0.0f, 5.0f, 1.0f));
         params.push_back(std::make_unique<juce::AudioParameterFloat>(ParameterID{"OUT", 1}, "Out Gain", 0.0f, 5.0f, 1.0f));
         

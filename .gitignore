@@ -1,3 +1,16 @@
-Builds/VisualStudio2022/.vs
-*.a
-Builds/VisualStudio2022/x64/Release/Shared Code/
+# CMake build output
+build/
+cmake-build-*/
+out/
+
+# Legacy Projucer artifacts (migrated away from)
+Builds/
+JuceLibraryCode/
+*.jucer.user
+
+# OS / editor
+.DS_Store
+.vs/
+.idea/
+.vscode/
+*.user

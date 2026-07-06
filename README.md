@@ -62,6 +62,22 @@
 
 ---
 
+## Building
+
+Fuzzboy builds with CMake + JUCE 8 (fetched automatically). Formats: VST3, AU
+(macOS), CLAP, Standalone. Free — no licensing/activation.
+
+```sh
+cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
+```
+
+Installers (Windows `.exe`, macOS `.pkg`, Linux zip) are produced centrally by
+[DirektDSP/InstallerGenerator](https://github.com/DirektDSP/InstallerGenerator),
+not from this repo.
+
+---
+
 ## Roadmap
 
 - **Expanded Preset Library**  
