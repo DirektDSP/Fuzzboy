@@ -8,6 +8,12 @@ Builds/
 JuceLibraryCode/
 *.jucer.user
 
+# InstallerGenerator render output (generated in CI; only icon.png is source)
+packaging/installer.nsi
+packaging/resources/
+packaging/macos/
+packaging/presets/
+
 # OS / editor
 .DS_Store
 .vs/
